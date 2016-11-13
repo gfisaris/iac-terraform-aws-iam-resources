@@ -1,5 +1,5 @@
-resource "aws_iam_role" "ecs_container_instance" {
-  name = "${var.prj_eco}-${var.prj_app}-${var.prj_env}-ecs_container_instance"
+resource "aws_iam_role" "ecsInstanceRole" {
+  name = "ecs_cluster_ecsInstanceRole"
   path = "/"
   assume_role_policy = <<EOF
 {
@@ -18,8 +18,8 @@ resource "aws_iam_role" "ecs_container_instance" {
 EOF
 }
 
-resource "aws_iam_role" "ecs_service_scheduler" {
-  name = "${var.prj_eco}-${var.prj_app}-${var.prj_env}-ecs_service_scheduler"
+resource "aws_iam_role" "ecsServiceRole" {
+  name = "ecs_cluster_ecsServiceRole"
   path = "/"
   assume_role_policy = <<EOF
 {
@@ -38,8 +38,8 @@ resource "aws_iam_role" "ecs_service_scheduler" {
 EOF
 }
 
-resource "aws_iam_role" "ecs_service_autoscaling" {
-  name = "${var.prj_eco}-${var.prj_app}-${var.prj_env}-ecs_service_autoscaling"
+resource "aws_iam_role" "ecsAutoscaleRole" {
+  name = "ecs_cluster_ecsAutoscaleRole"
   path = "/"
   assume_role_policy = <<EOF
 {
@@ -57,8 +57,8 @@ resource "aws_iam_role" "ecs_service_autoscaling" {
 EOF
 }
 
-resource "aws_iam_role" "ec2_container_service_task" {
-  name = "${var.prj_eco}-${var.prj_app}-${var.prj_env}-ec2_container_service_task"
+resource "aws_iam_role" "ecsTaskRole" {
+  name = "ecs_cluster_ecsTaskRole"
   path = "/"
   assume_role_policy = <<EOF
 {
