@@ -102,31 +102,6 @@ output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceAutoscaleRole_name"  
 output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceAutoscaleRole_role"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceAutoscaleRole.role}"}
 output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceAutoscaleRole_policy" {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceAutoscaleRole.policy}"}
 
-resource "aws_iam_role_policy" "AmazonEC2ContainerServiceTaskRole" {
-  name = "ecs_cluster_AmazonEC2ContainerServiceTaskRole"
-  role ="${aws_iam_role.ecsTaskRole.id}"
-  policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "",
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "ecs-tasks.amazonaws.com"
-      },
-      "Action": "sts:AssumeRole"
-    }
-  ]
-}
-EOF
-}
-
-output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceTaskRole_id"     {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceTaskRole.id}"}
-output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceTaskRole_name"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceTaskRole.name}"}
-output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceTaskRole_role"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceTaskRole.role}"}
-output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceTaskRole_policy" {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceTaskRole.policy}"}
-
 
 resource "aws_iam_role_policy" "AmazonEC2ContainerService3ReadOnlyAccess" {
   name = "ecs_cluster_AmazonEC2ContainerServiceS3ReadOnlyAccess"
@@ -189,4 +164,31 @@ output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceFullAccess_id"     {v
 output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceFullAccess_name"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceFullAccess.name}"}
 output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceFullAccess_role"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceFullAccess.role}"}
 output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceFullAccess_policy" {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceFullAccess.policy}"}
+*/
+
+/*
+resource "aws_iam_role_policy" "AmazonEC2ContainerServiceTaskRole" {
+  name = "ecs_cluster_AmazonEC2ContainerServiceTaskRole"
+  role ="${aws_iam_role.ecsTaskRole.id}"
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "ecs-tasks.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+EOF
+}
+
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceTaskRole_id"     {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceTaskRole.id}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceTaskRole_name"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceTaskRole.name}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceTaskRole_role"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceTaskRole.role}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceTaskRole_policy" {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceTaskRole.policy}"}
 */
