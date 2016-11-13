@@ -29,6 +29,11 @@ resource "aws_iam_role_policy" "AmazonEC2ContainerServiceforEC2Role" {
 EOF
 }
 
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceforEC2Role_id"     {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceforEC2Role.id}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceforEC2Role_name"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceforEC2Role.name}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceforEC2Role_role"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceforEC2Role.role}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceforEC2Role_policy" {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceforEC2Role.policy}"}
+
 resource "aws_iam_role_policy" "AmazonEC2ContainerServiceRole" {
   name = "ecs_cluster_AmazonEC2ContainerServiceRole"
   role = "${aws_iam_role.ecsServiceRole.id}"
@@ -53,6 +58,11 @@ resource "aws_iam_role_policy" "AmazonEC2ContainerServiceRole" {
 }
 EOF
 }
+
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceRole_id"     {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceRole.id}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceRole_name"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceRole.name}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceRole_role"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceRole.role}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceRole_policy" {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceRole.policy}"}
 
 resource "aws_iam_role_policy" "AmazonEC2ContainerServiceAutoscaleRole" {
   name = "ecs_cluster_AmazonEC2ContainerServiceAutoscaleRole"
@@ -87,6 +97,11 @@ resource "aws_iam_role_policy" "AmazonEC2ContainerServiceAutoscaleRole" {
 EOF
 }
 
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceAutoscaleRole_id"     {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceAutoscaleRole.id}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceAutoscaleRole_name"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceAutoscaleRole.name}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceAutoscaleRole_role"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceAutoscaleRole.role}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceAutoscaleRole_policy" {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceAutoscaleRole.policy}"}
+
 resource "aws_iam_role_policy" "AmazonEC2ContainerServiceTaskRole" {
   name = "ecs_cluster_AmazonEC2ContainerServiceTaskRole"
   role ="${aws_iam_role.ecsTaskRole.id}"
@@ -106,6 +121,11 @@ resource "aws_iam_role_policy" "AmazonEC2ContainerServiceTaskRole" {
 }
 EOF
 }
+
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceTaskRole_id"     {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceTaskRole.id}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceTaskRole_name"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceTaskRole.name}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceTaskRole_role"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceTaskRole.role}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceTaskRole_policy" {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceTaskRole.policy}"}
 
 
 resource "aws_iam_role_policy" "AmazonEC2ContainerService3ReadOnlyAccess" {
@@ -127,6 +147,11 @@ resource "aws_iam_role_policy" "AmazonEC2ContainerService3ReadOnlyAccess" {
 }
 EOF
 }
+
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerService3ReadOnlyAccess_id"     {value = "${aws_iam_role_policy.AmazonEC2ContainerService3ReadOnlyAccess.id}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerService3ReadOnlyAccess_name"   {value = "${aws_iam_role_policy.AmazonEC2ContainerService3ReadOnlyAccess.name}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerService3ReadOnlyAccess_role"   {value = "${aws_iam_role_policy.AmazonEC2ContainerService3ReadOnlyAccess.role}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerService3ReadOnlyAccess_policy" {value = "${aws_iam_role_policy.AmazonEC2ContainerService3ReadOnlyAccess.policy}"}
 
 /*
 resource "aws_iam_role_policy" "AmazonEC2ContainerServiceFullAccess" {
@@ -159,4 +184,9 @@ resource "aws_iam_role_policy" "AmazonEC2ContainerServiceFullAccess" {
 }
 EOF
 }
+
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceFullAccess_id"     {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceFullAccess.id}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceFullAccess_name"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceFullAccess.name}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceFullAccess_role"   {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceFullAccess.role}"}
+output "ecs_cluster_iamRolePolicy_AmazonEC2ContainerServiceFullAccess_policy" {value = "${aws_iam_role_policy.AmazonEC2ContainerServiceFullAccess.policy}"}
 */

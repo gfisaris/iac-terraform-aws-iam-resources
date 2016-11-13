@@ -18,6 +18,9 @@ resource "aws_iam_role" "ecsInstanceRole" {
 EOF
 }
 
+output "ecs_cluster_iamRole_ecsInstanceRole_arn"        {value ="${aws_iam_role.ecsInstanceRole.arn}"}
+output "ecs_cluster_iamRole_ecsInstanceRole_unique_id"  {value = "${aws_iam_role.ecsInstanceRole.unique_id}"}
+
 resource "aws_iam_role" "ecsServiceRole" {
   name = "ecs_cluster_ecsServiceRole"
   path = "/"
@@ -38,6 +41,9 @@ resource "aws_iam_role" "ecsServiceRole" {
 EOF
 }
 
+output "ecs_cluster_iamRole_ecsServiceRole_arn"        {value ="${aws_iam_role.ecsServiceRole.arn}"}
+output "ecs_cluster_iamRole_ecsServiceRole_unique_id"  {value = "${aws_iam_role.ecsServiceRole.unique_id}"}
+
 resource "aws_iam_role" "ecsAutoscaleRole" {
   name = "ecs_cluster_ecsAutoscaleRole"
   path = "/"
@@ -56,6 +62,9 @@ resource "aws_iam_role" "ecsAutoscaleRole" {
 }
 EOF
 }
+
+output "ecs_cluster_iamRole_ecsAutoscaleRole_arn"        {value ="${aws_iam_role.ecsAutoscaleRole.arn}"}
+output "ecs_cluster_iamRole_ecsAutoscaleRole_unique_id"  {value = "${aws_iam_role.ecsAutoscaleRole.unique_id}"}
 
 resource "aws_iam_role" "ecsTaskRole" {
   name = "ecs_cluster_ecsTaskRole"
@@ -76,3 +85,6 @@ resource "aws_iam_role" "ecsTaskRole" {
 }
 EOF
 }
+
+output "ecs_cluster_iamRole_ecsTaskRole_arn"        {value ="${aws_iam_role.ecsTaskRole.arn}"}
+output "ecs_cluster_iamRole_ecsTaskRole_unique_id"  {value = "${aws_iam_role.ecsTaskRole.unique_id}"}
