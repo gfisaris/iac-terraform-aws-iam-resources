@@ -1,12 +1,12 @@
-resource "aws_iam_instance_profile" "ecsInstanceRole" {
-  name  = "ecs_cluster"
+resource "aws_iam_instance_profile" "ecsInstanceProfile" {
+  name  = "${data.terraform_remote_state.project.name}-ecsInstanceProfile"
   roles = ["${aws_iam_role.ecsInstanceRole.id}"]
 }
 
-output "ecs_cluster_iamInstanceProfile_ecsInstanceRole_id"          {value = "${aws_iam_instance_profile.ecsInstanceRole.id}"}
-output "ecs_cluster_iamInstanceProfile_ecsInstanceRole_arn"         {value = "${aws_iam_instance_profile.ecsInstanceRole.arn}"}
-output "ecs_cluster_iamInstanceProfile_ecsInstanceRole_name"        {value = "${aws_iam_instance_profile.ecsInstanceRole.name}"}
-output "ecs_cluster_iamInstanceProfile_ecsInstanceRole_path"        {value = "${aws_iam_instance_profile.ecsInstanceRole.path}"}
-output "ecs_cluster_iamInstanceProfile_ecsInstanceRole_roles"       {value = ["${aws_iam_instance_profile.ecsInstanceRole.roles}"]}
-output "ecs_cluster_iamInstanceProfile_ecsInstanceRole_unique_id"   {value = "${aws_iam_instance_profile.ecsInstanceRole.unique_id}"}
-output "ecs_cluster_iamInstanceProfile_ecsInstanceRole_create_day"  {value = "${aws_iam_instance_profile.ecsInstanceRole.create_day}"}
+output "instance_profile_ecsInstanceProfile_id"          {value = "${aws_iam_instance_profile.ecsInstanceProfile.id}"}
+output "instance_profile_ecsInstanceProfile_arn"         {value = "${aws_iam_instance_profile.ecsInstanceProfile.arn}"}
+output "instance_profile_ecsInstanceProfile_name"        {value = "${aws_iam_instance_profile.ecsInstanceProfile.name}"}
+output "instance_profile_ecsInstanceProfile_path"        {value = "${aws_iam_instance_profile.ecsInstanceProfile.path}"}
+output "instance_profile_ecsInstanceProfile_roles"       {value = ["${aws_iam_instance_profile.ecsInstanceProfile.roles}"]}
+output "instance_profile_ecsInstanceProfile_unique_id"   {value = "${aws_iam_instance_profile.ecsInstanceProfile.unique_id}"}
+output "instance_profile_ecsInstanceProfile_create_day"  {value = "${aws_iam_instance_profile.ecsInstanceProfile.create_day}"}
